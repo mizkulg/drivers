@@ -5,8 +5,9 @@
  * get the Alazar drivers, Anaconda, Qcodes and 
  * the IBM software up and running.
  * 
- * @section Read through this README file to make sure
- * everything is gets installed correctly. After 
+ * @section DESCRIPTION
+ * Read through this README file to make sure
+ * everything gets installed correctly. After 
  * running the script and items in this file, the user 
  * should have everything to run Qcodes and the IBM 
  * software. Be sure to follow all commands and run
