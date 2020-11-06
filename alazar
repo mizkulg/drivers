@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#-----------------------------------------------
+#--------------Alazar Drivers-------------------
+sudo rpm -i libats-7.3.0-1.x86_64.rpm 
+#used sudo here instead of in the terminal due to 
+#conda/pip commands below
+sudo rpm -i alazar-front-panel-0.4.3-1.x86_64.rpm
+sudo rpm -i drivers-ats9440-dkms-7.2.3-1.x86_64.rpm
+sudo rpm -i alazar-front-panel-0.4.3-1.x86_64.rpm
+
+#-----------------------------------------------
+#--------------Qcodes and Anaconda--------------
+
+chmod +x Anaconda3-2020.07-Linux-x86_64.sh
+./Anaconda3-2020.07-Linux-x86_64.sh
+
+export PATH=$PATH:$HOME/anaconda/bin
+cd $HOME/
+yum install git
+git clone https://github.com/QCoDeS/Qcodes.git
+cd $HOME/Qcodes/
+conda env create -f environment.yml
+pip install qcodes
+cd $HOME/drivers/
+
+#-----------------------------------------------
+#--------------IBM Software---------------------
+
+mv sw-backend-qc-code/ $HOME/	
+cd $HOME/
+sudo dnf install ncurses-compat-libs
+sudo sw-backend-qc-code/ibmqc_package/doc/conda.repo/install-anaconda3-full.sh wget-mini /data/qc_code3.conda /opt/anaconda3
+cd $HOME/
+mkdir measurements/
