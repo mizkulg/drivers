@@ -1,6 +1,3 @@
-/**
- * @author Shawn Storm (storm.shwn@gmail.com)
- *
  * @brief This script runs everything needed to 
  * get the Alazar drivers, Anaconda, Qcodes and 
  * the IBM software up and running.
@@ -13,7 +10,7 @@
  * software. Be sure to follow all commands and run
  * the commands in the "After Installation" section.
  * Enjoy!
-**/
+
 
 To run the script run the following commands:
 
